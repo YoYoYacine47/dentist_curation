@@ -1,0 +1,74 @@
+{% load static %}
+
+<section style="background-color: #eee;">
+
+
+
+
+    <div class="container py-5">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <img src="/media/{{patient.image}}" alt="avatar" class="rounded-circle img-fluid"
+                            style="width: 150px;">
+                        <h5 class="my-3">{{patient.firstname}} {{patient.lastname}}</h5>
+                        <h5 class="my-3">{{patient.card_id}}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">birthday</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{patient.birthday}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Gender</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{patient.get_gender_display}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Email</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{patient.email}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Phone</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{patient.phone}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <p class="mb-0">Address</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <p class="text-muted mb-0">{{patient.address}} {{patient.commune}}
+                                    {{patient.commune.daira}} {{patient.commune.daira.wilaya}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>

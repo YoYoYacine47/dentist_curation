@@ -1,0 +1,38 @@
+{% for visit in visits %}
+<div class="m-4 border">
+    <div class="row bg-light p-2">
+        <div class="col">
+            {{visit.dentist.clinic}}
+        </div>
+        <div class="col">
+            {{visit.dentist}}
+        </div>
+        <div class="col">
+            {{visit.timestamp.date}}
+        </div>
+    </div>
+    <div class="row p-4">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>problem</th>
+                    <th>treatment</th>
+                    <th>final step</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for problem in problems %}
+                {% if problem.visit == visit %}
+                <tr>
+                    <td>{{problem.problem}}</td>
+                    <td>{{problem.selected}}</td>
+                    <td>{{problem.selected.final_step}}</td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            <tbody>
+        </table>
+    </div>
+</div>
+{% endfor %}

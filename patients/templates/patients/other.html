@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>problem</th>
+            <th>treatment</th>
+            <th>date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for problem in otherPB %}
+        <tr>
+            <td>{{problem.problem}}</td>
+            <td>{{problem.selected}}</td>
+            <td>{{problem.visit.timestamp|date}}</td>
+        </tr>
+
+        {% endfor %}
+    <tbody>
+</table>

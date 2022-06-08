@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Ingest {% endblock title %}
+
+{% block script %}
+<script src="{% static 'reports/upload.js' %}" defer></script>
+
+{% endblock script %}
+
+{% block content %}
+
+<h1>Ingest page</h1>
+<form action="/ingest/file_upload/" class="dropzone" id="my-awesome-dropzone">
+    {% csrf_token %}
+</form>
+<hr>
+<h2>patient data</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>firstname*</th>
+            <th>lastname*</th>
+            <th>card_id*</th>
+            <th>address*</th>
+            <th>phone</th>
+            <th>mail</th>
+            <th>connume*</th>
+            <th>image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>String</th>
+            <th>String</th>
+            <th>String</th>
+            <th>String</th>
+            <th>phone|String</th>
+            <th>string|email</th>
+            <th>integer</th>
+            <th>String</th>
+        </tr>
+
+    <tbody>
+</table>
+
+
+{% endblock content %}

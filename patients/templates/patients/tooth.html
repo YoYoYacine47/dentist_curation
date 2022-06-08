@@ -1,0 +1,22 @@
+<h1 class="text-center">tooth {{tooth}}</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>problem</th>
+            <th>treatment</th>
+            <th>final step</th>
+            <th>date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for problem in tooth_problems %}
+        <tr>
+            <td>{{problem.problem}}</td>
+            <td>{{problem.selected}}</td>
+            <td>{{problem.selected.final_step}}</td>
+            <td>{{problem.visit.timestamp|date}}</td>
+        </tr>
+
+        {% endfor %}
+    <tbody>
+</table>
